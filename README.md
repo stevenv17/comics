@@ -1,6 +1,6 @@
 # comics
 
-## En la raiz del proyecto (carpeta "comics"):
+## En la raiz del proyecto (carpeta "comics"), instalar dependencias así:
 ```
 npm install
 ```
