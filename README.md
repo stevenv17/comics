@@ -1,6 +1,12 @@
 # comics
 
-## En la raiz del proyecto (carpeta "comics"), instalar dependencias así:
+### Es necesario tener instalados npm y node.js, así que de no tenerlos instalados, se puede guiar por estos videos (dependiendo de si es linux o windows):
+```
+https://www.youtube.com/watch?v=wPp8tLPHagI
+https://www.youtube.com/watch?v=X-FPCwZFU_8
+```
+
+### En la raiz del proyecto (carpeta "comics"), instalar dependencias así:
 ```
 npm install
 ```
