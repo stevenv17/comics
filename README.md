@@ -21,3 +21,5 @@ npm run serve
 ```
 http://localhost:8080/
 ```
+
+![Image 1](image1.png)
