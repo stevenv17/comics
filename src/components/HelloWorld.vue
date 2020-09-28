@@ -1,6 +1,6 @@
 <template>
   <div >
-    <h1>{{title}}</h1>
+    <h1 class="title">{{title}}</h1>
     <el-container class="image_container" v-loading="loading">
       <div class="image_center">
         <el-image :src="image"></el-image>
@@ -13,13 +13,13 @@
         :texts="texts"
         show-text>
     </el-rate>
+    <el-button type="primary" icon="el-icon-refresh" v-on:click="loadLastComic"></el-button>
 
   </div>
 </template>
 
 <script>
 import axios from "axios";
-//axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export default {
   name: 'HelloWorld',
@@ -56,6 +56,8 @@ export default {
     },
 
     loadLastComic: function(){
+      this.loading = true;
+      this.value = null;
       const that = this;
       axios
           .get("/comics/api/609/info.0.json")
@@ -83,10 +85,11 @@ export default {
   width: 80%;
   margin: auto;
   height: 600px;
-  width: 700px;
-  overflow: scroll;
-  border: 1px solid #eee;
+  width: 720px;
+  overflow-y: auto;
+  border: 0.2rem solid #eee;
   scroll-behavior: auto;
+  padding: 1rem;
 }
 
 .image_center{
@@ -95,6 +98,30 @@ export default {
 
 .rate{
   padding: 1rem;
+}
+
+.title{
+  color: teal;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00808070;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00808099;
 }
 
 </style>
